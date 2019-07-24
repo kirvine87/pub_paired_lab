@@ -10,6 +10,6 @@ class CustomerTest < MiniTest::Test
 
   def test_get_customer_name()
     assert_equal("Pete Jakeman", @customer1.name)
-  end
+  end 
 
 end

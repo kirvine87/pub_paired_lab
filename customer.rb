@@ -7,5 +7,5 @@ class Customer
     @cash = cash
     @cust_drink = []
   end
-
+ 
 end
