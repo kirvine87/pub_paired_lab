@@ -8,7 +8,7 @@ class PubTest < MiniTest::Test
 
   def setup()
     @pub = Pub.new("Spoons", 200.00)
-    @drink1 = Drink.new("Jack D and Coke", 3.50)
+    @drink1 = Drink.new("Jack D and Coke", 3.50, 2)
   end
 
   def test_get_pub_name()
