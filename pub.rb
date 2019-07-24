@@ -14,7 +14,7 @@ class Pub
     @till += drink
   end
 
-  def sell_drink(customer, drink, age)
+  def sell_drink(customer, drink, age, drunkenness)
     if age < 18
       return "Yer no getting served, yer too young!"
     else

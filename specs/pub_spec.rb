@@ -24,16 +24,16 @@ class PubTest < MiniTest::Test
   end
 
   def test_sale_of_drink_to_customer__over()
-    customer = Customer.new("Bill Wyatt", 100.00, 21)
-    @pub.sell_drink(customer, @drink1, customer.age)
+    customer = Customer.new("Bill Wyatt", 100.00, 21, 0)
+    @pub.sell_drink(customer, @drink1, customer.age, customer.drunkenness)
     assert_equal(96.50, customer.cash)
     assert_equal(203.50, @pub.till)
     assert_equal(1, customer.drink_count())
   end
 
   def test_sale_of_drink_to_customer__under()
-    customer = Customer.new("Jonny Bravo", 100.00, 17)
-    info = @pub.sell_drink(customer, @drink1, customer.age)
+    customer = Customer.new("Jonny Bravo", 100.00, 17, 0)
+    info = @pub.sell_drink(customer, @drink1, customer.age, customer.drunkenness)
     assert_equal(100.00, customer.cash)
     assert_equal(200.00, @pub.till)
     assert_equal(0, customer.drink_count())
