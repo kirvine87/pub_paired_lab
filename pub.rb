@@ -10,4 +10,8 @@ class Pub
     @drinks = []
   end
 
+  def increase_till_cash(drink)
+    @till += drink
+  end
+
 end
