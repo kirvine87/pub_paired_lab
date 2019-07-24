@@ -14,10 +14,15 @@ class Pub
     @till += drink
   end
 
-  def sell_drink(customer, drink)
-    customer.remove_cash_from_wallet(drink.price)
-    increase_till_cash(drink.price)
-    customer.add_drink(drink)
+  def sell_drink(customer, drink, age)
+    if age < 18
+      return "Yer no getting served, yer too young!"
+    else
+      customer.remove_cash_from_wallet(drink.price)
+      increase_till_cash(drink.price)
+      customer.add_drink(drink)
+    end
+
   end
 
 end

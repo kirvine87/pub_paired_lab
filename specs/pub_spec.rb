@@ -23,13 +23,21 @@ class PubTest < MiniTest::Test
     assert_equal(203.50, @pub.increase_till_cash(@drink1.price))
   end
 
-  def test_sale_of_drink_to_customer()
-    customer = Customer.new("Bill Wyatt", 100.00)
-    @pub.sell_drink(customer, @drink1)
+  def test_sale_of_drink_to_customer__over()
+    customer = Customer.new("Bill Wyatt", 100.00, 21)
+    @pub.sell_drink(customer, @drink1, customer.age)
     assert_equal(96.50, customer.cash)
     assert_equal(203.50, @pub.till)
     assert_equal(1, customer.drink_count())
   end
 
+  def test_sale_of_drink_to_customer__under()
+    customer = Customer.new("Jonny Bravo", 100.00, 17)
+    info = @pub.sell_drink(customer, @drink1, customer.age)
+    assert_equal(100.00, customer.cash)
+    assert_equal(200.00, @pub.till)
+    assert_equal(0, customer.drink_count())
+    assert_equal("Yer no getting served, yer too young!", info)
+  end
 
 end
