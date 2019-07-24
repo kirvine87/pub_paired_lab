@@ -15,7 +15,7 @@ class CustomerTest < MiniTest::Test
   end
 
   def test_remove_cash_from_customer_wallet()
-    assert_equal(30.00, @customer1.remove_cash_from_wallet(20.00))
+    assert_equal(48.50, @customer1.remove_cash_from_wallet(@drink1.price))
   end
 
   def test_customer_can_get_drink()
