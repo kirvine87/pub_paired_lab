@@ -40,4 +40,13 @@ class PubTest < MiniTest::Test
     assert_equal("Yer no getting served, yer too young!", info)
   end
 
+  def test_sale_of_drink_to_customer__drunk()
+    customer = Customer.new("Jonny Bravo", 100.00, 17, 7)
+    info = @pub.sell_drink(customer, @drink1, customer.age, customer.drunkenness)
+    assert_equal(100.00, customer.cash)
+    assert_equal(200.00, @pub.till)
+    assert_equal(0, customer.drink_count())
+    assert_equal("You've had enough", info)
+  end
+
 end

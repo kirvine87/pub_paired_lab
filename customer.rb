@@ -28,7 +28,6 @@ class Customer
 
       #as customer drinks, alcohol level increases
       @drunkenness += drink.alcohol_level
-      # binding.pry
     end
   end
 

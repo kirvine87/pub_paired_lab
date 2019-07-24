@@ -15,6 +15,9 @@ class Pub
   end
 
   def sell_drink(customer, drink, age, drunkenness)
+    if customer.drunkenness >= 5
+      return "You've had enough"
+    end 
     if age < 18
       return "Yer no getting served, yer too young!"
     else
