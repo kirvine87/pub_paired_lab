@@ -1,3 +1,4 @@
+require('pry-byebug')
 class Customer
 
   attr_reader :name, :cash, :age, :drunkenness
@@ -20,6 +21,15 @@ class Customer
 
   def add_drink(drink)
     @cust_drink << drink
+  end
+
+  def add_drunkenness_level()
+    for drink in @cust_drink
+
+      #as customer drinks, alcohol level increases
+      @drunkenness += drink.alcohol_level
+      # binding.pry
+    end
   end
 
 
