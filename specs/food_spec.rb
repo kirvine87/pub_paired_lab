@@ -12,4 +12,8 @@ class FoodTest < MiniTest::Test
     assert_equal("Steak Pie", @food1.name)
   end
 
+  def test_get_food_price()
+    assert_equal(5.50, @food1.price)
+  end
+
 end
