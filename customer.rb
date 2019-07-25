@@ -1,6 +1,6 @@
 require('pry-byebug')
 class Customer
-
+  
   attr_reader :name, :cash, :age, :drunkenness
 
   def initialize(name, cash, age, drunkenness)
